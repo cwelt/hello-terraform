@@ -10,6 +10,13 @@ terraform {
       version = "~> 3.0"
     }
   }
+
+  backend "s3" {
+    bucket = "my-udemy-terraform-state"
+    key = "04-backends/state.tfstate"
+    region = "ap-south-1"
+  }
+
 }
 
 provider "aws" {
